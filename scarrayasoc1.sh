@@ -16,12 +16,12 @@ done
 read -rp "¿Qué color quieres para el fondo de la página?: " backcolor
 read -rp "¿Qué color quieres para el parrafo de la página?: " pcolor
 read -rp "¿Qué color quieres para el texto de la página?: " textcolor
-read -rp "¿Quieres añadir una foto?" foto
-if [ $foto = "si" ]; then
-    read -rp "¿Cuál es la dirección de la foto?" dir_foto
+read -rp "¿Quieres añadir una foto? (s/n): " foto
+if [ $foto = "s" ] || [ $foto = "S" ]; then
+    read -rp "¿Cuál es la dirección de la foto?: " dir_foto
 fi
 
-ip=$(ifconfig | head -n2 | tail -n1)
+ip=$(ip addr | tail -n4 | head -n1)
 
 if [ -f "index_esteban.html" ]; then
     rm "index_esteban.html"
