@@ -16,6 +16,7 @@ done
 read -rp "¿Qué color quieres para el fondo de la página?: " backcolor
 read -rp "¿Qué color quieres para el parrafo de la página?: " pcolor
 read -rp "¿Qué color quieres para el texto de la página?: " textcolor
+
 read -rp "¿Quieres añadir una foto? (s/n): " foto
 if [ $foto = "s" ] || [ $foto = "S" ]; then
     read -rp "¿Cuál es el nombre de la imagen?: " img
@@ -44,7 +45,6 @@ cat > "index_esteban.html" <<EOF
         <title>pagina</title>
     </head>
     <body>
-        <img src="$dir_foto" alt="foto">
         <p>
             $ip
         </p>
